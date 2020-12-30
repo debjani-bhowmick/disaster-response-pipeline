@@ -3,11 +3,11 @@
 ### Table of Contents
 1. [Description](Description)
 2. [Getting Started](Getting Started)
-  >[Dependencies](Dependencies)
-  >[Installing](Installing)
-  >[Executing Program](Executing Program)
-  >[File Description](File Description)
-  >[Additional Material](Additional Material)
+  * [Dependencies](Dependencies)
+  * [Installing](Installing)
+  * [Executing Program](Executing Program)
+  * [File Description](File Description)
+  * [Additional Material](Additional Material)
 3. [Authors](Authors)
 4. [License](License)
 5. [Acknowledgement](Acknowledgement)
@@ -35,7 +35,7 @@ Web App and Data Visualization: Flask, Plotly <br>
 #### Installing <a name="Installing"></a>
 To clone the git repository:
 
-git clone debjani-bhowmick/disaster-response-pipeline
+[git clone debjani-bhowmick/disaster-response-pipeline](https://github.com/debjani-bhowmick/disaster-response-pipeline)
 
 #### Executing Program <a name="Executing Program"></a>
 You can run the following commands in the project's directory to set up the database, train model and save the model.
