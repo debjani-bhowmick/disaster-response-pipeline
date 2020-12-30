@@ -5,9 +5,9 @@
 2. [Getting Started](Getting_Started)
   * [Dependencies](Dependencies)
   * [Installing](Installing)
-  * [Executing Program](Executing Program)
-  * [File Description](File Description)
-  * [Additional Material](Additional Material)
+  * [Executing Program](Executing_Program)
+  * [File Description](File_Description)
+  * [Additional Material](Additional_Material)
 3. [Authors](Authors)
 4. [License](License)
 5. [Acknowledgement](Acknowledgement)
@@ -35,16 +35,16 @@ Web App and Data Visualization: Flask, Plotly <br>
 #### Installing <a name="Installing"></a>
 To clone the git repository:
 
-[git clone debjani-bhowmick/disaster-response-pipeline](https://github.com/debjani-bhowmick/disaster-response-pipeline)
+```[git clone debjani-bhowmick/disaster-response-pipeline](https://github.com/debjani-bhowmick/disaster-response-pipeline)```
 
-#### Executing Program <a name="Executing Program"></a>
+#### Executing Program <a name="Executing_Program"></a>
 You can run the following commands in the project's directory to set up the database, train model and save the model.
 
 * To run ETL pipeline that clean the data and store the processed data in the database. Type python data/process_data.py in your terminal, which will call data/disaster_messages.csv data/disaster_categories.csv and will save the processed data in  data/disaster_response_db.db
 * To run the ML pipeline which loads data from DB, trains classifier and saves the classifier as a pickle file. Type python `models/train_classifier.py` in your terminal, which will call `data/disaster_response_db.db`  and will save trained model in `models/classifier.pkl`
 * Run the command python run.py from the app's directory to run your web app.
 
-#### File Description <a name=" File Description"></a>
+#### File Description <a name=" File_Description"></a>
 This project structure is divided into three directories:
 
 * app/templates/*: templates/html files for web app.  run.py: This file can be used to launch the Flask web app used to classify disaster messages
@@ -54,7 +54,7 @@ This project structure is divided into three directories:
 * models/train_classifier.py: A machine learning pipeline that loads data, trains a model, and saves the trained model as a .pkl file for later use
 
 
-#### Additional Material <a name=" Additional Material"></a>
+#### Additional Material <a name=" Additional_Material"></a>
 In the data and models folder you can find two jupyter notebook that will help you understand how the model works step by step:
 
 ETL Preparation Notebook: learn everything about the implemented ETL pipeline
