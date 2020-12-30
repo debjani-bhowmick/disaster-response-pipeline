@@ -40,12 +40,13 @@ To clone the git repository:
 #### Executing Program <a name="Executing Program"></a>
 You can run the following commands in the project's directory to set up the database, train model and save the model.
 
-To run ETL pipeline to clean data and store the processed data in the database python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/disaster_response_db.db
-To run the ML pipeline that loads data from DB, trains classifier and saves the classifier as a pickle file python models/train_classifier.py data/disaster_response_db.db models/classifier.pkl
-Run the following command in the app's directory to run your web app. python run.py
+* To run ETL pipeline that clean the data and store the processed data in the database. Type python data/process_data.py in your terminal, which will call data/disaster_messages.csv data/disaster_categories.csv and will save the processed data in  data/disaster_response_db.db
+* To run the ML pipeline which loads data from DB, trains classifier and saves the classifier as a pickle file. Type python `models/train_classifier.py` in your terminal, which will call `data/disaster_response_db.db`  and will save trained model in `models/classifier.pkl`
+* Run the command python run.py from the app's directory to run your web app.
 
 #### File Description <a name=" File Description"></a>
 This project structure is divided into three directories:
+
 * app/templates/*: templates/html files for web app.  run.py: This file can be used to launch the Flask web app used to classify disaster messages
 
 * data/process_data.py: Extract Train Load (ETL) pipeline used for data cleaning, feature extraction, and storing data in a SQLite database
@@ -57,7 +58,7 @@ This project structure is divided into three directories:
 In the data and models folder you can find two jupyter notebook that will help you understand how the model works step by step:
 
 ETL Preparation Notebook: learn everything about the implemented ETL pipeline
-ML Pipeline Preparation Notebook: look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn
+ML Pipeline Preparation Notebook: look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn. Have some guidlines how the model can be improved for better accuracy.
 You can use ML Pipeline Preparation Notebook to re-train the model or tune it through a dedicated Grid Search section.
 
 
