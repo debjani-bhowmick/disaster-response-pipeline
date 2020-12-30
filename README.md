@@ -2,7 +2,7 @@
 
 ### Table of Contents
 1. [Description](Description)
-2. [Getting Started](Getting Started)
+2. [Getting Started](Getting_Started)
   * [Dependencies](Dependencies)
   * [Installing](Installing)
   * [Executing Program](Executing Program)
@@ -22,7 +22,7 @@ Processing data, building an ETL pipeline to extract data from source, clean the
 Build a machine learning pipeline to train the which can classify text message in various categories
 Run a web app which can show model results in real time
 
-### Getting Started <a name="Getting Started"></a>
+### Getting Started <a name="Getting_Started"></a>
 
 #### Dependencies <a name=" Dependencies"></a>
 Python 3.5+ <br>
