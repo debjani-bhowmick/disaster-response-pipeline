@@ -67,7 +67,7 @@ In the `data` and `models` folder you can find two jupyter notebook that will he
 
 <b> ML Pipeline Preparation Notebook:</b> look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn. Have some guidlines how the model can be improved for better accuracy.You can use ML Pipeline Preparation Notebook to re-train the model or tune it through a dedicated Grid Search section.
 
-In the Screenshots of the web app are provided in `Screenshots` folder.
+The Screenshots of the web app are provided in `Screenshots` folder.
 
 
 ### Lic<b>ensing, Authors, Acknowledgements <a name=" Licensing, Authors, Acknowledgements"></a>
