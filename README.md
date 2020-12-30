@@ -50,8 +50,6 @@ To run ETL pipeline to clean data and store the processed data in the database p
 To run the ML pipeline that loads data from DB, trains classifier and saves the classifier as a pickle file python models/train_classifier.py data/disaster_response_db.db models/classifier.pkl
 Run the following command in the app's directory to run your web app. python run.py
 
-Go to http://0.0.0.0:3001/
-
 ### File Description
 This project structure is divided into three directories:
 * app/templates/*: templates/html files for web app.  run.py: This file can be used to launch the Flask web app used to classify disaster messages
