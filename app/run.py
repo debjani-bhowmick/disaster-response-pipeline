@@ -6,7 +6,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 from flask import Flask
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
@@ -25,13 +25,12 @@ def tokenize(text):
 
     return clean_tokens
 
-
 # load data
-engine = create_engine('sqlite:///../data/YourDatabaseName.db')
-df = pd.read_sql_table('YourTableName', engine)
+engine = create_engine('sqlite:///../data/DisasterResponse.db')
+df = pd.read_sql_table("DisasterResponse_table", engine)
 
 # load model
-model = joblib.load("../models/your_model_name.pkl")
+model = joblib.load("../models/classifiers.pkl")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -43,6 +42,15 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    
+    category_names = df.iloc[:,4:].columns
+    category_boolean = (df.iloc[:,4:] != 0).sum().values
+    
+    category = df[df.columns[5:]]
+    category_counts = category.mean()*category.shape[0]
+    category_names = list(category_counts.index)
+    nlarge_counts = category_counts.nlargest(5)
+    nlarge_names = list(nlarge_counts.index)
 
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -59,14 +67,34 @@ def index():
             'layout': {
                 'title': 'Distribution of Message Genres',
                 'yaxis': {
-                    'title': "Count"
+                     'title': "Count"
                 },
                 'xaxis': {
                     'title': "Genre"
                 }
             }
         },
-        # GRAPH 2 - Top message categories graph
+        # GRAPH 2 - category graph
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=category_boolean
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Message Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category",
+                    'tickangle': 35
+                }
+            }
+        },
+        # GRAPH 3- Top massage category graph
         {
             'data': [
                 Bar(
@@ -82,26 +110,6 @@ def index():
                 },
                 'xaxis': {
                     'title': "Category"
-                }
-            }
-        },
-        # GRAPH 3 -  Message category graph
-        {
-            'data': [
-                Bar(
-                    x=cats_names,
-                    y=cats_counts
-                )
-            ],
-
-            'layout': {
-                'title': 'Distribution of Message categories',
-                'yaxis': {
-                    'title': "Count"
-                },
-                'xaxis': {
-                    'title': "Category",
-                    'tickangle': 35
                 }
             }
         }
