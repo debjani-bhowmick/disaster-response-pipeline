@@ -3,11 +3,11 @@
 ### Table of Contents
 1. [Description](Description)
 2. [Getting Started](Getting_Started)
-  * [Dependencies](Dependencies)
-  * [Installing](Installing)
-  * [Executing Program](Executing_Program)
-  * [File Description](File_Description)
-  * [Additional Material](Additional_Material)
+   * [Dependencies](Dependencies)
+   * [Installing](Installing)
+   * [Executing Program](Executing_Program)
+   * [File Description](File_Description)
+   * [Additional Material](Additional_Material)
 3. [Authors](Authors)
 4. [License](License)
 5. [Acknowledgement](Acknowledgement)
@@ -47,20 +47,20 @@ You can run the following commands in the project's directory to set up the data
 #### File Description <a name=" File_Description"></a>
 This project structure is divided into three directories:
 
-* app/templates/*: templates/html files for web app.  run.py: This file can be used to launch the Flask web app used to classify disaster messages
-
-* data/process_data.py: Extract Train Load (ETL) pipeline used for data cleaning, feature extraction, and storing data in a SQLite database
-
-* models/train_classifier.py: A machine learning pipeline that loads data, trains a model, and saves the trained model as a .pkl file for later use
+<b> app/templates/*:</b> templates/html files for web app.
+<b> data/process_data/.py:</b> Extract Train Load (ETL) pipeline used for data cleaning, feature extraction, and storing data in a SQLite database
+<b> models/train_classifier.py:</b> A machine learning pipeline that loads data, trains a model, and saves the trained model as a .pkl file for later use
+<b> run.py:</b> This file can be used to launch the Flask web app used to classify disaster messages
 
 
 #### Additional Material <a name=" Additional_Material"></a>
-In the data and models folder you can find two jupyter notebook that will help you understand how the model works step by step:
+In the `data` and `models` folder you can find two jupyter notebook that will help you understand how the model works step by step:
 
-ETL Preparation Notebook: learn everything about the implemented ETL pipeline
-ML Pipeline Preparation Notebook: look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn. Have some guidlines how the model can be improved for better accuracy.
-You can use ML Pipeline Preparation Notebook to re-train the model or tune it through a dedicated Grid Search section.
+<b> ETL Preparation Notebook:</b> learn everything about the implemented ETL pipeline
+<b> ML Pipeline Preparation Notebook:</b> look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn. Have some guidlines how the model can be improved for better accuracy.You can use ML Pipeline Preparation Notebook to re-train the model or tune it through a dedicated Grid Search section.
+In the Screenshots of the web app are provided in `Screenshots` folder.
 
 
-#### Licensing, Authors, Acknowledgements <a name=" Licensing, Authors, Acknowledgements"></a>
-#### Author: Debjani Bhowmick
+#### Lic<b>ensing, Authors, Acknowledgements <a name=" Licensing, Authors, Acknowledgements"></a>
+<b> Author:</b> Debjani Bhowmick
+<b> Acknowledgements: </b>Udacity for providing an amazing Data Science Nanodegree Program
