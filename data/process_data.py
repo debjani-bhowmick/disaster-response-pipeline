@@ -4,6 +4,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 ############################################################
 
+
 def load_data(messages_filepath, categories_filepath):
     """
     Load files from filepaths and combine them.
@@ -21,6 +22,7 @@ def load_data(messages_filepath, categories_filepath):
     df = messages.merge(categories, how='outer', on='id')
     return df
 
+
 def clean_data(df):
     """
     Clean the data and convert the category part
@@ -35,7 +37,7 @@ def clean_data(df):
     categories = df['categories'].str.split(';', expand=True)
     # Fix the categories columns name
     row = categories.iloc[[1]]
-    category_colnames = [x[:-2] for x in row]
+    category_colnames = [x[:-2] for x in row.values[0]]
     # rename the columns of `categories`
     categories.columns = category_colnames
 
@@ -79,12 +81,10 @@ def main():
 
         print('Cleaning data...')
         df = clean_data(df)
-        
+
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
-        
         print('Cleaned data saved to database!')
-    
     else:
         print('Please provide the filepaths of the messages and categories '\
               'datasets as the first and second argument respectively, as '\
