@@ -40,7 +40,6 @@ def clean_data(df):
     category_colnames = [x[:-2] for x in row.values[0]]
     # rename the columns of `categories`
     categories.columns = category_colnames
-
     for column in categories:
         # set each value to be the last character of the string
         categories[column] = categories[column].astype(str).str[-1:]
@@ -52,6 +51,9 @@ def clean_data(df):
     df = pd.concat([df, categories], axis=1)
     # drop duplicates
     df.drop_duplicates(inplace=True)
+    # Removing entry that is non-binary
+    df = df[df['related'] != 2]
+    print('Duplicates remaining:', df.duplicated().sum())
     return df
 
 
@@ -84,6 +86,7 @@ def main():
 
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
+
         print('Cleaned data saved to database!')
     else:
         print('Please provide the filepaths of the messages and categories '\
