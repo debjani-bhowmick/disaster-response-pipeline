@@ -6,13 +6,14 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 from flask import Flask
-from flask import render_template, request, jsonify
+from flask import render_template, request
 from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
 
 app = Flask(__name__)
+
 
 def tokenize(text):
     tokens = word_tokenize(text)
@@ -25,12 +26,13 @@ def tokenize(text):
 
     return clean_tokens
 
+
 # load data
 engine = create_engine('sqlite:///../data/DisasterResponse.db')
 df = pd.read_sql_table("DisasterResponse_table", engine)
 
 # load model
-model = joblib.load("../models/classifiers.pkl")
+model = joblib.load("../models/classifier.pkl")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -42,10 +44,8 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
-    
-    category_names = df.iloc[:,4:].columns
-    category_boolean = (df.iloc[:,4:] != 0).sum().values
-    
+    category_names = df.iloc[:, 4:].columns
+    category_boolean = (df.iloc[:, 4:] != 0).sum().values
     category = df[df.columns[5:]]
     category_counts = category.mean()*category.shape[0]
     category_names = list(category_counts.index)
@@ -67,14 +67,14 @@ def index():
             'layout': {
                 'title': 'Distribution of Message Genres',
                 'yaxis': {
-                     'title': "Count"
+                    'title': "Count"
                 },
                 'xaxis': {
                     'title': "Genre"
                 }
             }
         },
-        # GRAPH 2 - category graph
+            # GRAPH 2 - category graph    
         {
             'data': [
                 Bar(
