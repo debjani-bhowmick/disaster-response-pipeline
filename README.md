@@ -72,4 +72,5 @@ The Screenshots of the web app are provided in `Screenshots` folder.
 
 ### Lic<b>ensing, Authors, Acknowledgements <a name=" Licensing, Authors, Acknowledgements"></a>
 <b> Author:</b> Debjani Bhowmick
+  
 <b> Acknowledgements: </b>Udacity for providing an amazing Data Science Nanodegree Program
