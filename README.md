@@ -43,8 +43,8 @@ You can run the following commands in the project's directory to set up the data
 * Go to `data` folder to run ETL pipeline. This will clean the data and store the processed data in the database. Type
 ``` python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db```
 
-* Go to `model` folder to run the ML pipeline. This will load the data from DB, trains classifier and saves the classifier as a pickle file. To exicute this function, from the terminal type 
-```python train_classifier.py data/disaster_response_db.db models/classifier.pkl```
+* Go to `root` folder to run the ML pipeline. This will load the data from DB, trains classifier and saves the classifier as a pickle file. To exicute this function, from the terminal type 
+```python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl```
 
 * Go to `app` folder from your terminal and type `python run.py` to run your web app.
 
